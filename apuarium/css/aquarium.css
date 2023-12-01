@@ -1,0 +1,74 @@
+@charset "utf-8";
+@import url(https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Nanum+Gothic&family=Sunflower:wght@300&display=swap);
+@import url(reset.css);
+
+*{margin:0;padding:0;}
+
+/*********************배경동영상***********************/
+.vid {width: 100%; height: 100%; position: fixed; top:0px; left:0px; opacity: 0.9; z-index: -1;}
+.vid video {width:100%; min-width:1600px;}
+
+/************************로고***************************/
+h1 {z-index:10;}
+h1 img { width:200px; height:auto;}
+
+/* ********************************* 1depth ****************************** */   
+header {display: flex; justify-content: space-between; padding: 25px 30px;}
+#gnb {display: flex; gap: 23px; margin-top: 35px;}
+#gnb>li { }
+#gnb>li>a {font-size: 15px;}
+#gnb>li.on>a { }
+#gnb>li:hover>a { }
+
+
+/* ********************************* 2depth ****************************** */   
+#gnb ul{display: none; margin-top: 25px;}
+#gnb>li:hover ul{ }
+#gnb li a{color: white;}
+#gnb ul a:hover {text-decoration: underline;}
+#gnb>li:hover ul{display: block;}
+#gnb>li>ul>li{display: block; margin-top: 14px;}
+
+/* ********************************* sns ****************************** */ 
+#sns {position: absolute; bottom: 10px; left: 10px;}
+#sns li {float: left; margin-right: 20px;}
+#sns .fa-brands {font-size: 25px; opacity: 0.5; transform: scale(1);
+transition: 0.5s;}   
+#sns .fa-brands:hover {opacity: 1; transform: scale(1.4);}
+
+/* ***************************** contents 레이아웃 ********************** */
+#side { width:800px; height:100%; position:fixed; bottom:0px; right:-800px;
+    opacity:0.5; transform:skewX(0deg); transition:all 0.5s;}
+#side:hover { right:0px; opacity:0.8;}
+#side .con { height: 100%; position: absolute; bottom: 0px;
+box-sizing: border-box; padding: 10px; transition: all 1s;}
+#side .con { }
+
+/* ***************************** contents내 썸네일 ********************** */
+#side .con p { width: 1300px;
+    height: 100px;
+    position: absolute;
+    left: -480px;
+    bottom: 570px;}
+#side .con p em { display:inline-block; font:bold 16px/1.7 arial;
+    transform:skewX(0deg); text-align: center; width: 100%; color: white;font-size: 80px;} 
+#side .con p img { width:100%; transition:all 0.5s;}
+#side .con p img:hover { opacity:1;}
+#side .con p:nth-child(1) {  transform: translateX(200px); transition:all  0.4s;}
+#side .con p:nth-child(2) { bottom:160px; transform: translateX(200px); transition:all  0.8s;}
+#side .con p:nth-child(3) { bottom:50px; transform: translateX(200px); transition:all  1.2s;}
+#side:hover .con p { transform:translateX(0px);}	 
+
+/* **************************** 자동롤링 버튼 ************************** */
+#side .btnContents { width:150px; height:50px; position:absolute;  bottom:40px; left:-200px; transform:skewX(0deg); color: white; }
+#side:hover .btnContents { left:700px;}	
+.btnContents i { font-size:60px; position:absolute; bottom:0px; right:0px; opacity:1;}
+.btnContents i:nth-child(1) { animation:ani linear 1.5s 0s infinite;}
+.btnContents i:nth-child(2) { animation:ani linear 1.5s 0.5s infinite;}
+.btnContents i:nth-child(3) { animation:ani linear 1.5s 1.0s infinite;}
+
+@keyframes ani {
+	0% { right:0px; transform:sclae(1); opacity:1;}
+	100% { right:100px; transform:scale(1.5); opacity:0;}
+}
+
